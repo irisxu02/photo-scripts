@@ -1,20 +1,31 @@
 # Automation scripts for photography
 
-`python organize.py --<flag> <root_dir_path>`
+## Basic organization
+```
+python organize.py --<flag> <root_dir_path>
+```
+**Extract all files from subdirectories into root directory**
 
-1. Extract all files from subdirectories into root directory
---extract
+`--extract`
 
-2. Convert heic to jpg using `heif-convert`. Install using: `sudo apt-get install libheif-examples`
---convert
+**Convert heic to jpg using `heif-convert`. Install using: `sudo apt-get install libheif-examples`**
 
-3. Separate photos by month and place in folders labeled yyyy-mm
---time
+`--convert`
 
-4. Separate photos by type with the folder name being the name of the file extension (e.g. arw, jpg, png)
+**Separate photos by month and place in folders labeled yyyy-mm**
+
+`--time`
+
+**Separate photos by type with the folder name being the name of the file extension (e.g. arw, jpg, png)**
 - extensions should not be case sensitive
-- jpg, JPG, jpeg , JPEG should all be in the same folder
---type
+- jpg, JPG, jpeg , JPEG will all be put in the same folder
 
-5. Script to identify any photos of food and place in a folder named 'food'
-Trained food detector on [Food-5K dataset](https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/)
+`--type`
+
+## Identify photos of food and place them in a folder named 'food'
+Food image classifier trained on [Food-5K dataset](https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/)
+
+```
+python find_food.py <root_dir_path> 
+```
+
